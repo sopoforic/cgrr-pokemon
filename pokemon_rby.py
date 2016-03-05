@@ -227,10 +227,10 @@ def unparse_time_played(td):
 
 def parse_species(b):
     l = list(b[:-1])
-    return [Pokemon(species_index[i]) for i in l if i in species_index]
+    return [species_to_enum(i) for i in l if i in species_index]
 
 def unparse_species(l):
-    return bytes([s.value for s in l] + [0xff])
+    return bytes([enum_to_species(s) for s in l] + [0xff])
 
 def parse_iv(b):
     return {
@@ -458,7 +458,7 @@ def unparse_pc_box_pokemon(d):
     d['ot_names'] = [d['pokemon'][i]['ot_name'] for i in range(d['count'])]
     d['species'] = [d['pokemon'][i]['species'] for i in range(d['count'])]
     for p in d['pokemon']:
-        b += pokemon_full_reader.pack(p)
+        b += pokemon_brief_reader.pack(p)
     b += bytes(1122-len(b))
     d['pokemon'] = b
     return pc_box_reader.pack(d)
