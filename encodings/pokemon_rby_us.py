@@ -1,10 +1,10 @@
 """ Python Character Mapping Codec pokemon_rby_us.
 
 Maps strings from the US version of Pokemon Red/Blue/Yellow to unicode, using
-the PUA codepoints from 0xe000-0xe0ff for symbols that cannot be mapped 1-1 to
+PUA codepoints from 0xe000-0xe0ff for symbols that cannot be mapped 1-1 to
 suitable unicode characters.
 
-"""#"
+"""
 
 import codecs
 
