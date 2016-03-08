@@ -743,22 +743,34 @@ class Pokemon(IntEnum):
     Hoopa = 720
     Volcanion = 721
 
+    def __init__(self, pokedex_number):
+        self.species = self.name
+        self.pokedex_number = pokedex_number
+
+# set species names that weren't valid identifiers
+Pokemon(29).species = "Nidoran♀"
+Pokemon(32).species = "Nidoran♂"
+Pokemon(83).species = "Farfetch'd"
+Pokemon(122).species = "Mr. Mime"
+Pokemon(250).species = "Ho-Oh"
+Pokemon(474).species = "Porygon-Z"
+
 class PokemonType(IntEnum):
-    NORMAL   = 0x00
-    FIGHTING = 0x01
-    FLYING   = 0x02
-    POISON   = 0x03
-    GROUND   = 0x04
-    ROCK     = 0x05
-    BUG      = 0x07
-    GHOST    = 0x08
-    FIRE     = 0x14
-    WATER    = 0x15
-    GRASS    = 0x16
-    ELECTRIC = 0x17
-    PSYCHIC  = 0x18
-    ICE      = 0x19
-    DRAGON   = 0x1A
+    Normal   = 0x00
+    Fighting = 0x01
+    Flying   = 0x02
+    Poison   = 0x03
+    Grount   = 0x04
+    Rock     = 0x05
+    Bug      = 0x07
+    Ghost    = 0x08
+    Fire     = 0x14
+    Water    = 0x15
+    Grass    = 0x16
+    Electric = 0x17
+    Psychic  = 0x18
+    Ice      = 0x19
+    Dragon   = 0x1A
 
 class Move(IntEnum):
     Pound = 1
@@ -1381,7 +1393,10 @@ class Move(IntEnum):
     Origin_Pulse = 618
     Precipice_Blades = 619
     Dragon_Ascent = 620
-    Hyperspace_Fur = 621
+    Hyperspace_Fury = 621
+
+    def __init__(self, number):
+        self.move_name = self.name
 
 class Item(IntEnum):
     Master_Ball = 1
@@ -1519,3 +1534,6 @@ class Item(IntEnum):
     TM48_Rock_Slide = 248
     TM49_Tri_Attack = 249
     TM50_Substitute = 250
+
+    def __init__(self, number):
+        self.item_name = self.name
