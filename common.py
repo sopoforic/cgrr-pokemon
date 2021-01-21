@@ -20,6 +20,7 @@ try:
 except ImportError:
     from enum34 import IntEnum
 
+
 class Pokemon(IntEnum):
     Bulbasaur = 1
     Ivysaur = 2
@@ -747,6 +748,7 @@ class Pokemon(IntEnum):
         self.species = self.name
         self.pokedex_number = pokedex_number
 
+
 # set species names that weren't valid identifiers
 Pokemon(29).species = "Nidoran♀"
 Pokemon(32).species = "Nidoran♂"
@@ -755,22 +757,24 @@ Pokemon(122).species = "Mr. Mime"
 Pokemon(250).species = "Ho-Oh"
 Pokemon(474).species = "Porygon-Z"
 
+
 class PokemonType(IntEnum):
-    Normal   = 0x00
+    Normal = 0x00
     Fighting = 0x01
-    Flying   = 0x02
-    Poison   = 0x03
-    Grount   = 0x04
-    Rock     = 0x05
-    Bug      = 0x07
-    Ghost    = 0x08
-    Fire     = 0x14
-    Water    = 0x15
-    Grass    = 0x16
+    Flying = 0x02
+    Poison = 0x03
+    Grount = 0x04
+    Rock = 0x05
+    Bug = 0x07
+    Ghost = 0x08
+    Fire = 0x14
+    Water = 0x15
+    Grass = 0x16
     Electric = 0x17
-    Psychic  = 0x18
-    Ice      = 0x19
-    Dragon   = 0x1A
+    Psychic = 0x18
+    Ice = 0x19
+    Dragon = 0x1A
+
 
 class Move(IntEnum):
     Pound = 1
@@ -1397,6 +1401,7 @@ class Move(IntEnum):
 
     def __init__(self, number):
         self.move_name = self.name
+
 
 class Item(IntEnum):
     Master_Ball = 1
